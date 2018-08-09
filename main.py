@@ -1,7 +1,6 @@
-with open("wiki_misspell.txt", "r") as f:
-    for word in f.readlines():
-        # generate wiki_rectified
-        pass
+result_file = open('data/result_ngram.txt', 'w')
 
-precision = 0
-recall = 0
+result_file.write("a")
+result_file.write("a")
+result_file.write("a")
+result_file.write("a")
