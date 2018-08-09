@@ -37,25 +37,26 @@ for i in range(0, int(len(m_list) / 800)):
         identical_substrings = [fragment for fragment in m_substrings if fragment in d_substrings]
 
         distance = m_len + d_len - 2 * len(identical_substrings)
-        # if dist <= min_dist:
-        #     min_dist = dist
-        #     matched = d_word
 
-    min_distance =
+        if distance < min_distance:
+            min_distance = distance
+            matched = d_word
 
     matched = matched[1:len(matched) - 1]
+    print(matched)
     # f_predict.write(matched)
     # f_predict.write("\n")
 
-    # TODO record the total count of predictions
-
     if matched == c_list[i].strip():
         correct += 1
-accuracy = correct / len(m_list)
-precision = correct /
+accuracy = correct / int(len(m_list) / 800)
+precision = correct / int(len(m_list) / 800)
+recall = correct / int(len(c_list) / 800)
+
+print("\n====== Result ======")
 print("Accuracy\t" + str(accuracy))
-print("Precision\t" + str(accuracy / len(c_list)))
-print("Recall\t" + str(accuracy / len(c_list)))
+print("Precision\t" + str(precision))
+print("Recall\t" + str(recall))
 
 f_misspell.close()
 f_correct.close()
