@@ -65,3 +65,6 @@ recall = round(correct_count / int(len(c_list) / 20), 4)
 print("\n====== Levenshtein Result ======")
 print("Precision\t" + str(precision))
 print("Recall\t" + str(recall))
+
+
+Levenshtein.apply_edit()
