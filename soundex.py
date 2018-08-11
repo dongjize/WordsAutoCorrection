@@ -20,7 +20,7 @@ predict_list = []
 
 soundex = fuzzy.Soundex(4)
 
-for m_word in m_list[0: int(len(m_list) / 20)]:
+for m_word in m_list[0: len(m_list)]:
     min_distance = 99999
 
     candidates = []
@@ -67,7 +67,7 @@ for m_word in m_list[0: int(len(m_list) / 20)]:
 predict_count = 0
 correct_count = 0
 
-for i in range(0, int(len(c_list) / 20)):
+for i in range(0, len(c_list)):
     c_list[i] = c_list[i].strip()
     c_word = c_list[i]
 
@@ -78,7 +78,7 @@ for p in predict_list:
     predict_count += len(p)
 
 precision = round(correct_count / predict_count, 4)
-recall = round(correct_count / int(len(c_list) / 20), 4)
+recall = round(correct_count / len(c_list), 4)
 
 print("\n====== Soundex Result ======")
 print("Precision\t" + str(precision))

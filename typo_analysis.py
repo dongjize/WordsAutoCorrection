@@ -1,7 +1,9 @@
 import Levenshtein
 
-f_misspell = open("data/wiki_misspell.txt", "r")
-f_correct = open("data/wiki_correct.txt", "r")
+# f_misspell = open("data/wiki_misspell.txt", "r")
+f_misspell = open("data/birkbeck_misspell.txt", "r")
+# f_correct = open("data/wiki_correct.txt", "r")
+f_correct = open("data/birkbeck_correct.txt", "r")
 
 m_list = f_misspell.readlines()
 c_list = f_correct.readlines()

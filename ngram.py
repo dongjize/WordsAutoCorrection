@@ -1,7 +1,9 @@
 import nltk
 
-f_misspell = open("data/wiki_misspell.txt", "r")
-f_correct = open("data/wiki_correct.txt", "r")
+# f_misspell = open("data/wiki_misspell.txt", "r")
+f_misspell = open("data/birkbeck_misspell.txt", "r")
+# f_correct = open("data/wiki_correct.txt", "r")
+f_correct = open("data/birkbeck_correct.txt", "r")
 f_dictionary = open('data/dict.txt', 'r')
 
 f_predict = open('data/predict_ngram.txt', 'w')
@@ -20,7 +22,7 @@ predicted_count = 0
 
 predict_list = []
 
-for m_word in m_list[0: int(len(m_list) / 20)]:
+for m_word in m_list[0: int(len(m_list) / 100)]:
 
     min_distance = 99999
 
@@ -57,7 +59,7 @@ for m_word in m_list[0: int(len(m_list) / 20)]:
 predict_count = 0
 correct_count = 0
 
-for i in range(0, int(len(c_list) / 20)):
+for i in range(0, len(c_list)):
     c_list[i] = c_list[i].strip()
     c_word = c_list[i]
 
@@ -68,7 +70,7 @@ for p in predict_list:
     predict_count += len(p)
 
 precision = round(correct_count / predict_count, 4)
-recall = round(correct_count / int(len(c_list) / 20), 4)
+recall = round(correct_count / int(len(c_list)), 4)
 
 print("\n====== N-Gram Result ======")
 print("Precision\t" + str(precision))
