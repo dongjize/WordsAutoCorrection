@@ -22,7 +22,7 @@ predicted_count = 0
 
 predict_list = []
 
-for m_word in m_list[0: int(len(m_list) / 100)]:
+for m_word in m_list:
 
     min_distance = 99999
 
@@ -70,7 +70,7 @@ for p in predict_list:
     predict_count += len(p)
 
 precision = round(correct_count / predict_count, 4)
-recall = round(correct_count / int(len(c_list)), 4)
+recall = round(correct_count / len(c_list), 4)
 
 print("\n====== N-Gram Result ======")
 print("Precision\t" + str(precision))

@@ -17,7 +17,7 @@ recall = 0.0
 
 predict_list = []
 
-for m_word in m_list[0: len(m_list)]:
+for m_word in m_list:
     min_distance = 99999
 
     candidates = []

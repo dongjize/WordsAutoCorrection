@@ -1,10 +1,10 @@
 import fuzzy
 import Levenshtein
 
-# f_misspell = open("data/wiki_misspell.txt", "r")
-f_misspell = open("data/birkbeck_misspell.txt", "r")
-f_correct = open("data/birkbeck_correct.txt", "r")
-# f_correct = open("data/wiki_correct.txt", "r")
+f_misspell = open("data/wiki_misspell.txt", "r")
+# f_misspell = open("data/birkbeck_misspell.txt", "r")
+# f_correct = open("data/birkbeck_correct.txt", "r")
+f_correct = open("data/wiki_correct.txt", "r")
 f_dictionary = open('data/dict.txt', 'r')
 
 f_predict = open('data/predict_soundex.txt', 'w')
@@ -36,6 +36,7 @@ for m_word in m_list[0: len(m_list)]:
         d_sdx = soundex(d_word)
 
         if m_sdx == d_sdx:
+            # candidates.append(d_word)
             temp_list.append(d_word)
 
     if len(temp_list) == 0:
